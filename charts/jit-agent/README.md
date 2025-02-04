@@ -18,28 +18,28 @@ Once Helm has been set up correctly, add the repo as follows:
 ```
   helm repo add jitsecurity https://jitsecurity.github.io/helm-charts
   helm repo update
-  helm install jit-k8s-collector --set jit.clientId=<CLIENT_ID> --set jit.clientSecret=<CLIENT_SECRET> --set cluster.name=<CLUSTER_NAME> -n jit-k8s-collector --create-namespace jitsecurity/jit-k8s-collector
+  helm install jit-agent --set jit.clientId=<CLIENT_ID> --set jit.clientSecret=<CLIENT_SECRET> --set cluster.name=<CLUSTER_NAME> -n jit-agent --create-namespace jitsecurity/jit-agent
 ```
 
 To uninstall the chart:
 ```
-  helm uninstall jit-k8s-collector
+  helm uninstall jit-agent
 ```
 
 ## Configuration
 
-The following table lists the configurable parameters of the `jit-k8s-collector` chart and their default values.
+The following table lists the configurable parameters of the `jit-agent` chart and their default values.
 
 | Parameter                  | Description                                      | Default                                      |
 |----------------------------|--------------------------------------------------|----------------------------------------------|
-| `image.repository`         | Image repository                                 | `ghcr.io/jitsecurity/jit-k8s-collector`      |
+| `image.repository`         | Image repository                                 | `ghcr.io/jitsecurity/jit-agent`      |
 | `image.tag`                | Image tag                                        | `0.1.0`                                      |
 | `image.pullPolicy`         | Image pull policy                                | `IfNotPresent`                               |
 | `cluster.name`             | Name of the cluster (required) `(1)`                  | `""`                                         |
 | `jit.clientId`             | Jit service client ID (required) `(2)`                 | `""`                                         |
 | `jit.clientSecret`         | Jit service client secret (required) `(2)`             | `""`                                         |
 | `jit.apiUrl`               | Jit service API URL                              | `https://api.jit.io`                         |
-| `serviceAccount.name`      | Name of the service account                     | `jit-k8s-collector-sa`                       |
+| `serviceAccount.name`      | Name of the service account                     | `jit-agent-sa`                       |
 
 `(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`
 

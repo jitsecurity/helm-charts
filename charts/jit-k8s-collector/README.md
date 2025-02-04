@@ -25,3 +25,18 @@ To uninstall the chart:
 ```
   helm uninstall jit-k8s-collector
 ```
+
+## Configuration
+
+The following table lists the configurable parameters of the `jit-k8s-collector` chart and their default values.
+
+| Parameter                  | Description                                      | Default                                      |
+|----------------------------|--------------------------------------------------|----------------------------------------------|
+| `image.repository`         | Image repository                                 | `ghcr.io/jitsecurity/jit-k8s-collector`      |
+| `image.tag`                | Image tag                                        | `0.1.0`                                      |
+| `image.pullPolicy`         | Image pull policy                                | `IfNotPresent`                               |
+| `cluster.name`             | Name of the cluster (required)                   | `""`                                         |
+| `jit.clientId`             | JIT service client ID (required)                 | `""`                                         |
+| `jit.clientSecret`         | JIT service client secret (required)             | `""`                                         |
+| `jit.apiUrl`               | JIT service API URL                              | `https://api.jit.io`                         |
+| `serviceAccount.name`      | Name of the service account                      | `jit-k8s-collector-sa`                       |

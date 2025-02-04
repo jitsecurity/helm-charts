@@ -1,0 +1,5 @@
+apiVersion: v2
+name: jit-agent
+description: A Helm chart for the periodic Kubernetes resources collector job
+version: 0.1.0
+appVersion: "1.0"

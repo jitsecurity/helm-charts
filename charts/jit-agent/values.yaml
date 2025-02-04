@@ -1,0 +1,15 @@
+image:
+  repository: ghcr.io/jitsecurity/jit-agent
+  tag: 0.1.0
+  pullPolicy: IfNotPresent
+
+cluster:
+  name: "" # Required, set it while installing the chart
+
+jit:
+  clientId: ""  # Required, set it while installing the chart
+  clientSecret: ""  # Required, set it while installing the chart
+  apiUrl: https://api.jit.io
+
+serviceAccount:
+  name: jit-agent-sa

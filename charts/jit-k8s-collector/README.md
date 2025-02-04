@@ -35,8 +35,12 @@ The following table lists the configurable parameters of the `jit-k8s-collector`
 | `image.repository`         | Image repository                                 | `ghcr.io/jitsecurity/jit-k8s-collector`      |
 | `image.tag`                | Image tag                                        | `0.1.0`                                      |
 | `image.pullPolicy`         | Image pull policy                                | `IfNotPresent`                               |
-| `cluster.name`             | Name of the cluster (required)                   | `""`                                         |
-| `jit.clientId`             | JIT service client ID (required)                 | `""`                                         |
-| `jit.clientSecret`         | JIT service client secret (required)             | `""`                                         |
+| `cluster.name`             | Name of the cluster (required) `(1)`                  | `""`                                         |
+| `jit.clientId`             | JIT service client ID (required) `(2)`                 | `""`                                         |
+| `jit.clientSecret`         | JIT service client secret (required) `(2)`             | `""`                                         |
 | `jit.apiUrl`               | JIT service API URL                              | `https://api.jit.io`                         |
-| `serviceAccount.name`      | Name of the service account                      | `jit-k8s-collector-sa`                       |
+| `serviceAccount.name`      | Name of the service account                     | `jit-k8s-collector-sa`                       |
+
+`(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`
+
+`(2)` Refer to [JIT documentation](https://docs.jit.io/docs/managing-users#generating-api-tokens) for more information on how to get the client ID and secret.

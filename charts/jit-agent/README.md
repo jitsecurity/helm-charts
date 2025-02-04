@@ -1,6 +1,6 @@
-# Jit Kubernetes Collector
+# Jit Agent
 
-A robust Kubernetes resource collector that periodically gathers cluster resource information and uploads it to Jit service. This tool helps maintain an up-to-date inventory of your Kubernetes resources across different environments.
+A robust Kubernetes resource collector that periodically gathers cluster resource information and uploads it to Jit. This tool helps maintain an up-to-date inventory of your Kubernetes resources across different environments.
 
 
 ## Prerequisites

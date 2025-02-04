@@ -1,5 +1,15 @@
 apiVersion: v1
 entries:
+  jit-agent:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-02-04T11:57:52.742964355Z"
+    description: A Helm chart for the periodic Kubernetes resources collector job
+    digest: f833f51f0dce706507062da37864419c6556ffe8c127c1865f1b25669fcc1d36
+    name: jit-agent
+    urls:
+    - https://github.com/jitsecurity/helm-charts/releases/download/jit-agent-0.1.0/jit-agent-0.1.0.tgz
+    version: 0.1.0
   jit-k8s-collector:
   - apiVersion: v2
     appVersion: "1.0"
@@ -10,4 +20,4 @@ entries:
     urls:
     - https://github.com/jitsecurity/helm-charts/releases/download/jit-k8s-collector-0.1.0/jit-k8s-collector-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-04T09:41:41.944727838Z"
+generated: "2025-02-04T11:57:52.742968904Z"

@@ -1,12 +1,12 @@
 # Jit Kubernetes Collector
 
-A robust Kubernetes resource collector that periodically gathers cluster resource information and uploads it to JIT service. This tool helps maintain an up-to-date inventory of your Kubernetes resources across different environments.
+A robust Kubernetes resource collector that periodically gathers cluster resource information and uploads it to Jit service. This tool helps maintain an up-to-date inventory of your Kubernetes resources across different environments.
 
 
 ## Prerequisites
 
 * Kubernetes cluster access
-* JIT service credentials
+* Jit service credentials
 * Helm 3.x (for deployment)
 
 ## Usage
@@ -36,11 +36,11 @@ The following table lists the configurable parameters of the `jit-k8s-collector`
 | `image.tag`                | Image tag                                        | `0.1.0`                                      |
 | `image.pullPolicy`         | Image pull policy                                | `IfNotPresent`                               |
 | `cluster.name`             | Name of the cluster (required) `(1)`                  | `""`                                         |
-| `jit.clientId`             | JIT service client ID (required) `(2)`                 | `""`                                         |
-| `jit.clientSecret`         | JIT service client secret (required) `(2)`             | `""`                                         |
-| `jit.apiUrl`               | JIT service API URL                              | `https://api.jit.io`                         |
+| `jit.clientId`             | Jit service client ID (required) `(2)`                 | `""`                                         |
+| `jit.clientSecret`         | Jit service client secret (required) `(2)`             | `""`                                         |
+| `jit.apiUrl`               | Jit service API URL                              | `https://api.jit.io`                         |
 | `serviceAccount.name`      | Name of the service account                     | `jit-k8s-collector-sa`                       |
 
 `(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`
 
-`(2)` Refer to [JIT documentation](https://docs.jit.io/docs/managing-users#generating-api-tokens) for more information on how to get the client ID and secret.
+`(2)` Refer to [Jit documentation](https://docs.jit.io/docs/managing-users#generating-api-tokens) for more information on how to get the client ID and secret.

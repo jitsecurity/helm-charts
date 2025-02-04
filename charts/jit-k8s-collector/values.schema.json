@@ -19,12 +19,12 @@
         "clientId": {
           "type": "string",
           "minLength": 1,
-          "description": "The client ID for JIT. This field is required."
+          "description": "The client ID for Jit. This field is required."
         },
         "clientSecret": {
           "type": "string",
           "minLength": 1,
-          "description": "The client secret for JIT. This field is required."
+          "description": "The client secret for Jit. This field is required."
         }
       },
       "required": ["clientId", "clientSecret"]

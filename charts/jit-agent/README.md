@@ -40,6 +40,10 @@ The following table lists the configurable parameters of the `jit-agent` chart a
 | `jit.clientSecret`         | Jit service client secret (required) `(2)`             | `""`                                         |
 | `jit.apiUrl`               | Jit service API URL                              | `https://api.jit.io`                         |
 | `serviceAccount.name`      | Name of the service account                     | `jit-agent-sa`                       |
+| `resources.requests.cpu`   | CPU resource requests                           | `100m`                                       |
+| `resources.requests.memory`| Memory resource requests                        | `128Mi`                                      |
+| `resources.limits.cpu`     | CPU resource limits                             | `200m`                                       |
+| `resources.limits.memory`  | Memory resource limits                          | `256Mi`                                      |
 
 `(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`
 

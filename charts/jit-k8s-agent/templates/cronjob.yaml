@@ -16,9 +16,16 @@ spec:
           serviceAccountName: {{ .Values.serviceAccount.name }}
           restartPolicy: OnFailure
           containers:
-            - name: jit-agent
+            - name: jit-k8s-agent
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
+              resources:
+                requests:
+                  cpu: {{ .Values.resources.requests.cpu }}
+                  memory: {{ .Values.resources.requests.memory }}
+                limits:
+                  cpu: {{ .Values.resources.limits.cpu }}
+                  memory: {{ .Values.resources.limits.memory }}
               env:
                 - name: CLUSTER_NAME
                   value: {{ .Values.cluster.name }}

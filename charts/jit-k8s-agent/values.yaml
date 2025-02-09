@@ -1,0 +1,23 @@
+image:
+  repository: public.ecr.aws/h8r7r9n6/jit-k8s-agent
+  tag: 0.1.0
+  pullPolicy: IfNotPresent
+
+cluster:
+  name: "" # Required, set it while installing the chart
+
+jit:
+  clientId: "" # Required, set it while installing the chart
+  clientSecret: "" # Required, set it while installing the chart
+  apiUrl: https://api.jit.io
+
+serviceAccount:
+  name: jit-k8s-agent-sa
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "200m"
+    memory: "256Mi"

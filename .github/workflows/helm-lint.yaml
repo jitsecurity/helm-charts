@@ -1,0 +1,31 @@
+name: Helm Lint
+
+on:
+  push:
+    paths:
+      - "charts/**"
+  pull_request:
+    paths:
+      - "charts/**"
+
+jobs:
+  helm-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: "latest"
+
+      - name: Run helm lint
+        run: |
+          for chart in charts/*/; do
+            if [ -d "$chart" ]; then
+              echo "Linting chart: $chart"
+              rm -rf "$chart/values.schema.json"
+              helm lint "$chart" --strict
+            fi
+          done

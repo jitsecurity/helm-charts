@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/jitsecurity/jit-agent
+  repository: public.ecr.aws/h8r7r9n6/jit-k8s-agent
   tag: 0.1.0
   pullPolicy: IfNotPresent
 
@@ -12,7 +12,7 @@ jit:
   apiUrl: https://api.jit.io
 
 serviceAccount:
-  name: jit-agent-sa
+  name: jit-k8s-agent-sa
 
 resources:
   requests:

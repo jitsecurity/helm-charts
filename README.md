@@ -4,7 +4,7 @@ This repository contains Helm charts for Jit Security's Kubernetes applications.
 
 ## Charts
 
-### [jit-agent](charts/jit-agent)
+### [jit-k8s-agent](charts/jit-k8s-agent)
 A Kubernetes resource collector that periodically gathers cluster resource information and uploads it to Jit.
 
 ## Usage

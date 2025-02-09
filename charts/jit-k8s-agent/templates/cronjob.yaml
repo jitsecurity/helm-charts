@@ -16,7 +16,7 @@ spec:
           serviceAccountName: {{ .Values.serviceAccount.name }}
           restartPolicy: OnFailure
           containers:
-            - name: jit-agent
+            - name: jit-k8s-agent
               image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               resources:

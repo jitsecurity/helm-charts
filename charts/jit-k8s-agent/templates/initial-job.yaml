@@ -1,0 +1,10 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Chart.Name }}-initial-job
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+spec:
+  backoffLimit: 3
+  template:
+    {{- include "jit-job-spec" . | nindent 4 }}

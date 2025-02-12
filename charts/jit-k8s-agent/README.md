@@ -33,7 +33,7 @@ The following table lists the configurable parameters of the `jit-k8s-agent` cha
 | Parameter                  | Description                                      | Default                                      |
 |----------------------------|--------------------------------------------------|----------------------------------------------|
 | `image.repository`         | Image repository                                 | `public.ecr.aws/h8r7r9n6/jit-k8s-agent`      |
-| `image.tag`                | Image tag                                        | `0.2.0`                                      |
+| `image.tag`                | Image tag                                        | `1.0.0`                                      |
 | `image.pullPolicy`         | Image pull policy                                | `IfNotPresent`                               |
 | `cluster.name`             | Name of the cluster (required) `(1)`                  | `""`                                         |
 | `jit.clientId`             | Jit service client ID (required) `(2)`                 | `""`                                         |
@@ -45,6 +45,6 @@ The following table lists the configurable parameters of the `jit-k8s-agent` cha
 | `resources.limits.cpu`     | CPU resource limits                             | `200m`                                       |
 | `resources.limits.memory`  | Memory resource limits                          | `256Mi`                                      |
 
-`(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`
+`(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`. The cluster name should be unique across all clusters.
 
 `(2)` Refer to [Jit documentation](https://docs.jit.io/docs/managing-users#generating-api-tokens) for more information on how to get the client ID and secret.

@@ -49,6 +49,7 @@ rules:
   - apiGroups: ["networking.k8s.io"]
     resources:
       - ingresses
+      - ingressclasses
       - networkpolicies
     verbs:
       - get

@@ -1,0 +1,24 @@
+jit:
+  clientId: "your-client-id"
+  clientSecret: "your-client-secret"
+
+cluster:
+  name: "jit-cto-cluster"
+
+tolerations:
+  - key: workload-type
+    operator: Equal
+    value: stable
+    effect: NoSchedule
+  - key: workload-type
+    operator: Equal
+    value: system
+    effect: NoSchedule
+  - key: workload-type
+    operator: Equal
+    value: temp-pr-jobs
+    effect: NoSchedule
+  - key: workload-type
+    operator: Equal
+    value: temp
+    effect: NoSchedule

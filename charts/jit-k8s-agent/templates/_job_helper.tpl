@@ -2,6 +2,10 @@
 spec:
   serviceAccountName: {{ .Values.serviceAccount.name }}
   restartPolicy: OnFailure
+  {{- if .Values.tolerations }}
+  tolerations:
+{{ toYaml .Values.tolerations | indent 4 }}
+  {{- end }}
   containers:
     - name: jit-k8s-agent
       image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

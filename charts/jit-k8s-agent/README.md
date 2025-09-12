@@ -30,20 +30,21 @@ To uninstall the chart:
 
 The following table lists the configurable parameters of the `jit-k8s-agent` chart and their default values.
 
-| Parameter                  | Description                                      | Default                                      |
-|----------------------------|--------------------------------------------------|----------------------------------------------|
-| `image.repository`         | Image repository                                 | `public.ecr.aws/h8r7r9n6/jit-k8s-agent`      |
-| `image.tag`                | Image tag                                        | `1.1.0`                                      |
-| `image.pullPolicy`         | Image pull policy                                | `IfNotPresent`                               |
-| `cluster.name`             | Name of the cluster (required) `(1)`                  | `""`                                         |
-| `jit.clientId`             | Jit service client ID (required) `(2)`                 | `""`                                         |
-| `jit.clientSecret`         | Jit service client secret (required) `(2)`             | `""`                                         |
-| `jit.apiUrl`               | Jit service API URL                              | `https://api.jit.io`                         |
-| `serviceAccount.name`      | Name of the service account                     | `jit-k8s-agent-sa`                       |
-| `resources.requests.cpu`   | CPU resource requests                           | `100m`                                       |
-| `resources.requests.memory`| Memory resource requests                        | `128Mi`                                      |
-| `resources.limits.cpu`     | CPU resource limits                             | `200m`                                       |
-| `resources.limits.memory`  | Memory resource limits                          | `256Mi`                                      |
+| Parameter                   | Description                                | Default                                 |
+| --------------------------- | ------------------------------------------ | --------------------------------------- |
+| `image.repository`          | Image repository                           | `public.ecr.aws/h8r7r9n6/jit-k8s-agent` |
+| `image.tag`                 | Image tag                                  | `1.1.0`                                 |
+| `image.pullPolicy`          | Image pull policy                          | `IfNotPresent`                          |
+| `cluster.name`              | Name of the cluster (required) `(1)`       | `""`                                    |
+| `jit.clientId`              | Jit service client ID (required) `(2)`     | `""`                                    |
+| `jit.clientSecret`          | Jit service client secret (required) `(2)` | `""`                                    |
+| `jit.apiUrl`                | Jit service API URL                        | `https://api.jit.io`                    |
+| `serviceAccount.name`       | Name of the service account                | `jit-k8s-agent-sa`                      |
+| `resources.requests.cpu`    | CPU resource requests                      | `500m`                                  |
+| `resources.requests.memory` | Memory resource requests                   | `2Gi`                                   |
+| `resources.limits.cpu`      | CPU resource limits                        | `1000m`                                 |
+| `resources.limits.memory`   | Memory resource limits                     | `4Gi`                                   |
+| `kubescape.enabled`         | Enable Kubescape security scanning         | `true`                                  |
 
 `(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`. The cluster name should be unique across all clusters.
 

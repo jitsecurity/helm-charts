@@ -11,6 +11,9 @@ jit:
   clientSecret: "" # Required, set it while installing the chart
   apiUrl: https://api.jit.io
 
+kubescape:
+  enabled: true
+
 serviceAccount:
   name: jit-k8s-agent-sa
 

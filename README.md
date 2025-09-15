@@ -41,7 +41,8 @@ helm install jit-k8s-agent \
 ### **Enable/Disable Kubescape**
 - **Default**: ✅ **Enabled** (automatic security scanning)
 - **Disable**: `--set kubescape.enabled=false`
-- **Runtime Toggle**: Set `KUBESCAPE_ENABLED=false` environment variable
+- **Configuration**: The Helm chart value `kubescape.enabled` is **authoritative** - it sets the `KUBESCAPE_ENABLED` environment variable in pod templates
+- **Behavior Changes**: To toggle Kubescape on/off, use `helm upgrade` with the desired setting - changing environment variables on running pods has no effect without pod recreation
 
 ### **Resource Requirements Update**
 - **Previous**: 1Gi memory requests / 2Gi limits

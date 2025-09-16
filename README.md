@@ -64,14 +64,14 @@ helm install jit-k8s-agent \
 ## 📊 **Expected Changes**
 
 ### **Performance Impact**
-- **Execution Time**: +3-5 seconds per scan *(for security analysis)*
+- **Execution Time**: More seconds per scan *(for security analysis)*
 - **Memory Usage**: +500MB-1GB during scanning
 - **Additional Data**: Security findings uploaded to Jit dashboard
 
 ### **What Customers Will See**
 1. **Same resource collection** as before
 2. **New security findings** in Jit dashboard
-3. **Slightly longer job execution** (3-5 seconds)
+3. **Longer job execution**
 4. **Higher memory usage** during scans
 
 ---

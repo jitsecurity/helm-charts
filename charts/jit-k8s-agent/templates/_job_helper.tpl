@@ -28,4 +28,6 @@ spec:
               key: JIT_CLIENT_SECRET
         - name: JIT_API_URL
           value: {{ .Values.jit.apiUrl }}
+        - name: KUBESCAPE_ENABLED
+          value: "{{ .Values.kubescape.enabled }}"
 {{- end -}}

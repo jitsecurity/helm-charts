@@ -1,6 +1,6 @@
 image:
   repository: public.ecr.aws/h8r7r9n6/jit-k8s-agent
-  tag: 1.1.0
+  tag: 1.2.0
   pullPolicy: IfNotPresent
 
 cluster:

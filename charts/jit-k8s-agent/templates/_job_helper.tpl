@@ -1,4 +1,5 @@
 {{- define "jit-job-spec" -}}
+{{- $jitCredentialsSecret := .Values.jit.existingSecret | default (printf "%s-jit-credentials" .Chart.Name) -}}
 spec:
   serviceAccountName: {{ .Values.serviceAccount.name }}
   restartPolicy: OnFailure
@@ -19,12 +20,12 @@ spec:
         - name: JIT_CLIENT_ID
           valueFrom:
             secretKeyRef:
-              name: {{ .Chart.Name }}-jit-credentials
+              name: {{ $jitCredentialsSecret }}
               key: JIT_CLIENT_ID
         - name: JIT_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
-              name: {{ .Chart.Name }}-jit-credentials
+              name: {{ $jitCredentialsSecret }}
               key: JIT_CLIENT_SECRET
         - name: JIT_API_URL
           value: {{ .Values.jit.apiUrl }}

@@ -18,16 +18,22 @@
       "properties": {
         "clientId": {
           "type": "string",
-          "minLength": 1,
-          "description": "The client ID for Jit. This field is required."
+          "description": "The client ID for Jit. This field is required when not using an existing secret."
         },
         "clientSecret": {
           "type": "string",
-          "minLength": 1,
-          "description": "The client secret for Jit. This field is required."
+          "description": "The client secret for Jit. This field is required when not using an existing secret."
+        },
+        "existingSecret": {
+          "type": "string",
+          "description": "The name of an existing secret to use for Jit credentials. If provided, clientId and clientSecret will be ignored."
+        },
+        "apiUrl": {
+          "type": "string",
+          "description": "The Jit API URL"
         }
       },
-      "required": ["clientId", "clientSecret"]
+      "description": "Jit authentication requires either: 1) Both 'clientId' and 'clientSecret' for direct authentication, or 2) 'existingSecret' to reference an existing Kubernetes secret containing the credentials."
     }
   }
 }

@@ -7,8 +7,11 @@ cluster:
   name: "" # Required, set it while installing the chart. Should be unique across all clusters.
 
 jit:
-  clientId: "" # Required, set it while installing the chart
-  clientSecret: "" # Required, set it while installing the chart
+  # clientId and clientSecret are required when not using an existing secret
+  # clientId: ""
+  # clientSecret: ""
+  # existingSecret prevents storing clientId and clientSecret as plain text in the values.yaml file
+  # existingSecret: ""
   apiUrl: https://api.jit.io
 
 kubescape:

@@ -38,6 +38,7 @@ The following table lists the configurable parameters of the `jit-k8s-agent` cha
 | `cluster.name`              | Name of the cluster (required) `(1)`       | `""`                                    |
 | `jit.clientId`              | Jit service client ID (required) `(2)`     | `""`                                    |
 | `jit.clientSecret`          | Jit service client secret (required) `(2)` | `""`                                    |
+| `jit.existingSecret`        | Name of existing secret with credentials `(2)` | `""`                                 |
 | `jit.apiUrl`                | Jit service API URL                        | `https://api.jit.io`                    |
 | `serviceAccount.name`       | Name of the service account                | `jit-k8s-agent-sa`                      |
 | `resources.requests.cpu`    | CPU resource requests                      | `500m`                                  |
@@ -45,7 +46,9 @@ The following table lists the configurable parameters of the `jit-k8s-agent` cha
 | `resources.limits.cpu`      | CPU resource limits                        | `1000m`                                 |
 | `resources.limits.memory`   | Memory resource limits                     | `4Gi`                                   |
 | `kubescape.enabled`         | Enable Kubescape security scanning         | `true`                                  |
+| `nodeSelector`              | Node selector for pod scheduling           | `{}`                                    |
+| `tolerations`               | Tolerations for pod scheduling on tainted nodes | `[]`                              |
 
 `(1)` You can retrieve the cluster name by running `kubectl config get-clusters` or `kubectl config current-context`. The cluster name should be unique across all clusters.
 
-`(2)` Refer to [Jit documentation](https://docs.jit.io/docs/managing-users#generating-api-tokens) for more information on how to get the client ID and secret.
+`(2)` Authentication: Provide either `clientId` + `clientSecret` OR `existingSecret`. Refer to [Jit documentation](https://docs.jit.io/docs/managing-users#generating-api-tokens) for more information on how to get the client ID and secret.

@@ -7,8 +7,11 @@ cluster:
   name: "" # Required, set it while installing the chart. Should be unique across all clusters.
 
 jit:
-  clientId: "" # Required, set it while installing the chart
-  clientSecret: "" # Required, set it while installing the chart
+  # Option 1: Direct credentials (required if existingSecret is not provided)
+  clientId: "" # Set during installation when using direct credentials
+  clientSecret: "" # Set during installation when using direct credentials
+  # Option 2: Reference to existing secret (alternative to clientId/clientSecret)
+  existingSecret: "" # Name of existing secret containing JIT_CLIENT_ID and JIT_CLIENT_SECRET
   apiUrl: https://api.jit.io
 
 kubescape:
@@ -24,3 +27,9 @@ resources:
   limits:
     cpu: "1000m"
     memory: "4Gi"
+
+# Optional: Node selector for pod scheduling
+nodeSelector: {}
+
+# Optional: Tolerations for pod scheduling on tainted nodes
+tolerations: []

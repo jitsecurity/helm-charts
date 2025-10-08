@@ -9,11 +9,19 @@ Validate required values and provide clear error messages
 {{- end -}}
 
 {{- if .Values.jit -}}
-  {{- if and .Values.jit.clientId .Values.jit.clientSecret -}}
-    {{- if .Values.jit.existingSecret -}}
+  {{- $hasClientId := and .Values.jit.clientId (ne .Values.jit.clientId "") -}}
+  {{- $hasClientSecret := and .Values.jit.clientSecret (ne .Values.jit.clientSecret "") -}}
+  {{- $hasExistingSecret := and .Values.jit.existingSecret (ne .Values.jit.existingSecret "") -}}
+  
+  {{- if and $hasClientId $hasClientSecret -}}
+    {{- if $hasExistingSecret -}}
 {{- $errors = append $errors "Cannot specify both direct credentials (clientId/clientSecret) and existingSecret. Choose one authentication method." -}}
     {{- end -}}
-  {{- else if .Values.jit.existingSecret -}}
+  {{- else if $hasClientId -}}
+{{- $errors = append $errors "clientSecret is required when clientId is provided" -}}
+  {{- else if $hasClientSecret -}}
+{{- $errors = append $errors "clientId is required when clientSecret is provided" -}}
+  {{- else if $hasExistingSecret -}}
     {{- /* Valid: using existingSecret */ -}}
   {{- else -}}
 {{- $errors = append $errors "Jit authentication requires either: 1) Both 'clientId' and 'clientSecret' for direct authentication, or 2) 'existingSecret' to reference an existing Kubernetes secret" -}}

@@ -33,7 +33,7 @@ The following table lists the configurable parameters of the `jit-k8s-agent` cha
 | Parameter                   | Description                                | Default                                 |
 | --------------------------- | ------------------------------------------ | --------------------------------------- |
 | `image.repository`          | Image repository                           | `public.ecr.aws/h8r7r9n6/jit-k8s-agent` |
-| `image.tag`                 | Image tag                                  | `1.2.1`                                 |
+| `image.tag`                 | Image tag                                  | `1.3.0`                                 |
 | `image.pullPolicy`          | Image pull policy                          | `IfNotPresent`                          |
 | `cluster.name`              | Name of the cluster (required) `(1)`       | `""`                                    |
 | `jit.clientId`              | Jit service client ID (required) `(2)`     | `""`                                    |
